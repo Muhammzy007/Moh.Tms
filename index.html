@@ -3,27 +3,131 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Muhammed "Moh.Tms" Creative Designer & Developer</title>
-
-  <!-- Tailwind -->
+  <title>Muhammed "Moh.Tms" - Creative Designer & Developer</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body class="bg-gray-50 text-gray-800">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <div class="text-2xl font-bold text-gray-800">Moh.Tms</div>
+        <div id="navLinks" class="hidden md:flex space-x-8">
+          <a href="#home" class="text-gray-600 hover:text-purple-600 transition duration-300">Home</a>
+          <a href="#about" class="text-gray-600 hover:text-purple-600 transition duration-300">About</a>
+          <a href="#skills" class="text-gray-600 hover:text-purple-600 transition duration-300">Skills</a>
+          <a href="#portfolio" class="text-gray-600 hover:text-purple-600 transition duration-300">Portfolio</a>
+          <a href="#contact" class="text-gray-600 hover:text-purple-600 transition duration-300">Contact</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden text-gray-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-  <!-- 🔹 Your HTML content remains EXACTLY the same as in Mohh.txt -->
-  <!-- Just make sure where you had <style> ... </style> and <script> ... </script>,
-       they are now removed since those are in external files. -->
+  <!-- Hero -->
+  <section id="home" class="gradient-bg min-h-screen flex items-center justify-center pt-16">
+    <div class="max-w-6xl mx-auto px-4 text-center text-white">
+      <div class="mb-8">
+        <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-white/20 backdrop-blur-sm flex items-center justify-center">
+          <img src="assets/profile.jpg" alt="Profile" class="w-32 h-32 object-cover rounded-full">
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-4">Muhammed</h1>
+        <h2 class="text-2xl md:text-3xl font-light mb-6">"Moh.Tms"</h2>
+        <p class="text-xl md:text-2xl mb-8 opacity-90">Creative Designer & Full-Stack Developer</p>
+        <p class="text-lg mb-8 opacity-80">📍 Abuja FCT, Nigeria</p>
+        <button onclick="scrollToSection('portfolio')"
+          class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+          View My Work
+        </button>
+      </div>
+    </div>
+  </section>
 
-  <!-- Example: Your profile image -->
-  <img src="assets/profile.jpg" alt="Profile photo" class="w-40 h-40 rounded-full mx-auto mb-4 object-cover">
+  <!-- About -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16">About Me</h2>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-2xl font-semibold mb-6">Multi-Disciplinary Creative Professional</h3>
+          <p class="text-lg text-gray-600 mb-6">
+            I'm a passionate designer and developer who bridges the gap between creativity and technology.
+            With expertise spanning graphic design, web development, UI/UX design, and full-stack engineering,
+            I create digital experiences that are both beautiful and functional.
+          </p>
+          <p class="text-lg text-gray-600 mb-6">
+            Based in the vibrant tech hub of Abuja, Nigeria, I work with clients globally to bring their
+            digital visions to life through innovative design and robust development solutions.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Creative Problem Solver</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Tech Enthusiast</span>
+            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Detail Oriented</span>
+          </div>
+        </div>
+        <div class="photo-upload-area rounded-lg p-8 text-center">
+          <div class="mb-4">
+            <svg class="w-16 h-16 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold mb-2">Professional Photo</h4>
+          <p class="text-gray-600 text-sm mb-4">Upload a high-quality headshot or professional photo (400x400px recommended)</p>
+          <input type="file" id="profilePhoto" accept="image/*" class="hidden">
+          <button onclick="document.getElementById('profilePhoto').click()"
+            class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition duration-300">
+            Choose Photo
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Custom Script -->
+  <!-- Skills -->
+  <section id="skills" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16">Skills & Expertise</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Keep all skill cards as in your code -->
+        <!-- ... -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16">Portfolio</h2>
+      <div class="portfolio-grid">
+        <!-- Keep your portfolio cards as in your code -->
+        <!-- ... -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Get in touch</h2>
+      <p class="text-gray-600 mb-6">Email: <span class="font-medium">mhmmdsalaudeen@gmail.com</span> • Phone: <span
+          class="font-medium">+234 9071524404</span></p>
+    </div>
+  </section>
+
+  <footer class="py-8 bg-white">
+    <div class="max-w-6xl mx-auto px-4 text-center text-gray-600">
+      © <span id="year"></span> Muhammed "Moh.Tms". All rights reserved.
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
