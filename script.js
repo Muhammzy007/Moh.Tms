@@ -1,86 +1,144 @@
-// File data - your uploaded files
-const files = [
-    { name: "README.md", type: "document", date: "2 hours ago" },
-    { name: "faxicon.ico", type: "image", date: "2 hours ago" },
-    { name: "index.html", type: "code", date: "16 minutes ago" },
-    { name: "script.js", type: "code", date: "10 minutes ago" },
-    { name: "style.css", type: "code", date: "15 minutes ago" }
-];
+// Mobile menu functionality
+const menuBtn = document.getElementById('menu-btn');
+const closeMenu = document.getElementById('close-menu');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 
-// Function to display files in grid view
-function displayFilesGrid() {
-    const fileGrid = document.getElementById('fileDisplay');
-    fileGrid.className = 'file-grid';
-    fileGrid.innerHTML = '';
-    
-    files.forEach(file => {
-        const fileCard = document.createElement('div');
-        fileCard.className = 'file-card';
-        
-        // Determine icon based on file type
-        let iconClass = 'fa-file';
-        if (file.type === 'image') iconClass = 'fa-file-image';
-        if (file.type === 'code') iconClass = 'fa-file-code';
-        if (file.type === 'document') iconClass = 'fa-file-alt';
-        
-        fileCard.innerHTML = `
-            <div class="file-icon">
-                <i class="fas ${iconClass}"></i>
-            </div>
-            <div class="file-name">${file.name}</div>
-            <div class="file-date">Updated ${file.date}</div>
-        `;
-        
-        fileGrid.appendChild(fileCard);
-    });
-}
-
-// Function to display files in list view
-function displayFilesList() {
-    const fileGrid = document.getElementById('fileDisplay');
-    fileGrid.className = 'file-list';
-    fileGrid.innerHTML = '';
-    
-    files.forEach(file => {
-        const listItem = document.createElement('div');
-        listItem.className = 'file-list-item';
-        
-        // Determine icon based on file type
-        let iconClass = 'fa-file';
-        if (file.type === 'image') iconClass = 'fa-file-image';
-        if (file.type === 'code') iconClass = 'fa-file-code';
-        if (file.type === 'document') iconClass = 'fa-file-alt';
-        
-        listItem.innerHTML = `
-            <div class="file-list-icon">
-                <i class="fas ${iconClass}"></i>
-            </div>
-            <div class="file-list-info">
-                <div class="file-list-name">${file.name}</div>
-                <div class="file-list-date">Updated ${file.date}</div>
-            </div>
-            <a href="#" class="file-list-view">View</a>
-        `;
-        
-        fileGrid.appendChild(listItem);
-    });
-}
-
-// Toggle between grid and list view
-let isGridView = true;
-document.getElementById('viewToggle').addEventListener('click', function() {
-    isGridView = !isGridView;
-    
-    if (isGridView) {
-        displayFilesGrid();
-        this.innerHTML = '<i class="fas fa-list"></i> List View';
-    } else {
-        displayFilesList();
-        this.innerHTML = '<i class="fas fa-th"></i> Grid View';
-    }
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+    mobileMenuOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
 });
 
-// Initialize with grid view when page loads
+function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    mobileMenuOverlay.classList.remove('open');
+    document.body.style.overflow = 'auto';
+}
+
+closeMenu.addEventListener('click', closeMobileMenu);
+mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
+// Scroll animation
+function checkFade() {
+    const elements = document.querySelectorAll('.fade-in');
+    elements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const elementBottom = el.getBoundingClientRect().bottom;
+        const isVisible = (elementTop < window.innerHeight - 50) && (elementBottom > 0);
+        if (isVisible) {
+            el.classList.add('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', checkFade);
+window.addEventListener('load', checkFade);
+
+// Project modal functionality (placeholder)
+function showProject(id) {
+    alert('Project details for ' + id + ' would be shown here in a complete implementation.');
+}
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            const offsetTop = targetElement.offsetTop - 80; // Adjust for fixed header
+            
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Form submission handling
+const contactForm = document.querySelector('form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Simple form validation
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        
+        let isValid = true;
+        
+        if (!nameInput.value.trim()) {
+            isValid = false;
+            highlightError(nameInput);
+        } else {
+            removeErrorHighlight(nameInput);
+        }
+        
+        if (!emailInput.value.trim() || !isValidEmail(emailInput.value)) {
+            isValid = false;
+            highlightError(emailInput);
+        } else {
+            removeErrorHighlight(emailInput);
+        }
+        
+        if (!messageInput.value.trim()) {
+            isValid = false;
+            highlightError(messageInput);
+        } else {
+            removeErrorHighlight(messageInput);
+        }
+        
+        if (isValid) {
+            // In a real implementation, you would send the form data to a server here
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        }
+    });
+}
+
+function highlightError(input) {
+    input.classList.add('error');
+}
+
+function removeErrorHighlight(input) {
+    input.classList.remove('error');
+}
+
+function isValidEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+// Lazy loading for images
 document.addEventListener('DOMContentLoaded', function() {
-    displayFilesGrid();
+    const lazyImages = document.querySelectorAll('img');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src || img.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => {
+            if (img.classList.contains('lazy')) {
+                imageObserver.observe(img);
+            }
+        });
+    }
 });
