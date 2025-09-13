@@ -50,7 +50,7 @@
     background: white;
     z-index: 100;
     transition: right 0.3s ease;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 极 15px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-menu.open {
@@ -102,4 +102,24 @@ html {
 .nav-logo {
     height: 40px;
     width: auto;
+}
+
+/* Project modal styling */
+#project-modal {
+    transition: opacity 0.3s ease;
+}
+
+#project-modal:not(.hidden) {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Form error styling */
+.error {
+    border-color: #ef4444 !important;
 }
