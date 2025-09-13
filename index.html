@@ -3,53 +3,548 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad "Moh.Tms" - Portfolio</title>
-    <link rel="icon" href="faxicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Muhammed "Moh.Tms" Creative Designer & Full-Stack Developer</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <img src="assets/logo.png" alt="Tech Magnet Studio Logo" class="logo-img">
-                <h1>Tech Magnet Studio</h1>
-            </div>
-            <div class="user-info">
-                <img src="assets/profile.jpg" alt="Muhammad Moh.Tms" class="profile-img">
-                <span>Muhammad "Moh.Tms"</span>
-            </div>
-        </header>
-
-        <div class="main-content">
-            <aside class="sidebar">
-                <h2>Menu</h2>
-                <ul>
-                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#"><i class="fas fa-briefcase"></i> Projects</a></li>
-                    <li><a href="#"><i class="fas fa-file"></i> Files</a></li>
-                    <li><a href="#"><i class="fas fa-address-card"></i> About</a></li>
-                    <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-            </aside>
-
-            <main class="content">
-                <div class="content-header">
-                    <h2>My Uploaded Files</h2>
-                    <button class="view-toggle" id="viewToggle">
-                        <i class="fas fa-th"></i> Toggle View
-                    </button>
+<body class="bg-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 shadow-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="h-10">
+                    <img src="logo.png" alt="Moh.Tms Logo" class="nav-logo h-full">
                 </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-blue-400 transition-colors">About</a>
+                    <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-colors">Projects</a>
+                    <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-colors">Skills</a>
+                    <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-colors">Contact</a>
+                </div>
+                <button id="menu-btn" class="md:hidden text-gray-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-                <div class="files-container">
-                    <div class="file-grid" id="fileDisplay">
-                        <!-- Files will be displayed here by JavaScript -->
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center text-white pt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="profile-pic mx-auto mb-8">
+                    <img src="profile.jpg" alt="Muhammed Moh.Tms">
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 fade-in leading-tight">
+                    Muhammed <span class="text-blue-400">"Moh.Tms"</span>
+                </h1>
+                <p class="text-lg md:text-xl lg:text-2xl mb-6 fade-in">Creative Designer & Full-Stack Developer</p>
+                <p class="text-base md:text-lg mb-10 max-w-3xl mx-auto fade-in leading-relaxed">
+                    Crafting digital experiences that blend stunning design with powerful functionality. 
+                    From concept to deployment, I bring ideas to life with precision and creativity.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in">
+                    <a href="#projects" class="bg-blue-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 transition-colors w-full sm:w-auto text-center">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-colors w-full sm:w-auto text-center">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4 fade-in">About Me</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto fade-in">
+                    I'm a passionate creative professional with over 10 years of experience spanning design, user experience, 
+                    and full-stack development. I believe in creating digital solutions that are not only 
+                    visually stunning but also highly functional and user-centered.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 fade-in bg-gray-700 rounded-lg">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a4 4 0 004-4V5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Creative Design</h3>
+                    <p class="text-gray-300">Brand identity, visual design, and creative solutions that make lasting impressions.</p>
+                </div>
+                
+                <div class="text-center p-6 fade-in bg-gray-700 rounded-lg">
+                    <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">UI/UX Design</h3>
+                    <p class="text-gray-300">User-centered design that creates intuitive and engaging digital experiences.</p>
+                </div>
+                
+                <div class="text-center p-6 fade-in bg-gray-700 rounded-lg">
+                    <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Full-Stack Development</h3>
+                    <p class="text-gray-300">End-to-end web development from frontend interfaces to backend systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4 fade-in">Featured Projects</h2>
+                <p class="text-xl text-gray-300 fade-in">Projects showcasing my expertise across different domains</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Creative Design Project -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&h=400&fit=crop&crop=center" 
+                             alt="Coffee shop branding and packaging design" 
+                             class="w-full h-full object-cover"
+                             onerror="this.src=''; this.alt='Coffee branding image failed to load'; this.style.display='none';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">Zenith Coffee Co.</h4>
+                            <p class="text-sm opacity-90">Brand Identity & Packaging</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-pink-500/20 text-pink-300 text-xs px-2 py-1 rounded-full">Brand Design</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">Zenith Coffee Co. Rebrand</h3>
+                        <p class="text-gray-300 mb-4">Complete brand identity redesign for premium coffee company including logo, packaging, and marketing materials.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-400">2024</span>
+                            <button onclick="showProject('zenith')" class="text-blue-400 hover:text-blue-300 font-medium">View Project →</button>
+                        </div>
                     </div>
                 </div>
-            </main>
+
+                <!-- UI/UX Project -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop&crop=center" 
+                             alt="Mobile banking app UI design mockup" 
+                             class="w-full h-full object-cover"
+                             onerror="this.src=''; this.alt='Mobile banking UI image failed to load'; this.style.display='none';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">FlexiPay Banking</h4>
+                            <p class="text-sm opacity-90">Mobile UI/UX Design</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-full">UI/UX Design</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">FlexiPay Mobile Banking App</h3>
+                        <p class="text-gray-300 mb-4">User experience design for next-generation mobile banking platform with focus on accessibility and security.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-400">2024</span>
+                            <button onclick="showProject('flexipay')" class="text-blue-400 hover:text-blue-300 font-medium">View Project →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full-Stack Project -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&crop=center" 
+                             alt="Sustainability analytics dashboard with environmental data" 
+                             class="w-full h-full object-cover"
+                             onerror="this.src=''; this.alt='Sustainability dashboard image failed to load'; this.style.display='none';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">EcoTrack Platform</h4>
+                            <p class="text-sm opacity-90">Sustainability Analytics</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-green-500/20 text-green-300 text-xs px-2 py-1 rounded-full">Full-Stack</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">EcoTrack Sustainability Platform</h3>
+                        <p class="text-gray-300 mb-4">Enterprise web application for tracking carbon footprint with real-time analytics and reporting dashboard.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-400">2024</span>
+                            <button onclick="showProject('ecotrack')" class="text-blue-400 hover:text-blue-300 font-medium">View Project →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce Project -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop&crop=center" 
+                             alt="Artisan marketplace e-commerce platform with handmade products" 
+                             class="w-full h-full object-cover"
+                             onerror="this.src=''; this.alt='E-commerce marketplace image failed to load'; this.style.display='none';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">CraftHub Marketplace</h4>
+                            <p class="text-sm opacity-90">Artisan E-commerce Platform</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-yellow-500/20 text-yellow-300 text-xs px-2 py-1 rounded-full">E-commerce</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">CraftHub Artisan Marketplace</h3>
+                        <p class="text-gray-300 mb-4">Full-stack development of a marketplace platform connecting artisans with customers worldwide.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-400">2023</span>
+                            <button onclick="showProject('crafthub')" class="text-blue-400 hover:text-blue-300 font-medium">View Project →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile App Project -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop&crop=center" 
+                             alt="Fitness tracking mobile app with workout statistics" 
+                             class="w-full h-full object-cover"
+                             onerror="this.src=''; this.alt='Fitness app image failed to load'; this.style.display='none';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">FitSync App</h4>
+                            <p class="text-sm opacity-90">Fitness & Wellness</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-red-500/20 text-red-300 text-xs px-2 py-1 rounded-full">Mobile App</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">FitSync Fitness Tracking App</h3>
+                        <p class="text-gray-300 mb-4">Cross-platform mobile application for workout tracking, nutrition planning, and health monitoring.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-400">2023</span>
+                            <button onclick="showProject('fitsync')" class="text-blue-400 hover:text-blue-300 font-medium">View Project →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SaaS Project -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop&crop=center" 
+                             alt="Digital marketing analytics dashboard with charts and metrics" 
+                             class="w-full h-full object-cover"
+                             onerror="this.src=''; this.alt='Marketing dashboard image failed to load'; this.style.display='none';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">MarketPulse Analytics</h4>
+                            <p class="text-sm opacity-90">Marketing Intelligence</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-indigo-500/20 text-indigo-300 text-xs px-2 py-1 rounded-full">SaaS</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">MarketPulse Analytics Platform</h3>
+                        <p class="text-gray-300 mb-4">Comprehensive digital marketing analytics platform with AI-powered insights and recommendations.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-400">2022</span>
+                            <button onclick="showProject('marketpulse')" class="text-blue-400 hover:text-blue-300 font-medium">View Project →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4 fade-in">Skills & Expertise</h2>
+                <p class="text-xl text-gray-300 fade-in">A versatile skill set that spans creative design and technical development</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Design Skills -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-white mb-6 flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a4 4 0 004-4V5z"></path>
+                        </svg>
+                        Creative Design
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-white">Brand Identity</span>
+                                <span class="text-gray-400">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-blue-500 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-white">UI/UX Design</span>
+                                <span class="text-gray-400">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-purple-500 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-white">Typography</span>
+                                <span class="text-gray-400">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-pink-500 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-white">Packaging Design</span>
+                                <span class="text-gray-400">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Development Skills -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-white mb-6 flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                        Development
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-white">Frontend (React/Vue)</span>
+                                <span class="text-gray-400">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-green-500 h-2.5 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-white">Backend (Node.js/Python)</span>
+                                <span class="text-gray-400">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-red-500 h-2.5 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-white">Mobile Development</span>
+                                <span class="text-gray-400">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-indigo-500 h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-white">Database Design</span>
+                                <span class="text-gray-400">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-teal-500 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4 fade-in">Get In Touch</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto fade-in">
+                    Have a project in mind or want to discuss potential collaboration? I'd love to hear from you.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-white mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-500/20 p-3 rounded-full mr-4">
+                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium">Email</h4>
+                                <p class="text-gray-300">hello@mohtms.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-purple-500/20 p-3 rounded-full mr-4">
+                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium">Connect</h4>
+                                <div class="flex space-x-4 mt-2">
+                                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-white mb-6">Send a Message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your.email@example.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="logo.png" alt="Moh.Tms Logo" class="h-8 mr-3">
+                    <span class="text-gray-400">© 2024 Muhammed "Moh.Tms". All rights reserved.</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <img src="logo.png" alt="Moh.Tms Logo" class="h-8">
+                <button id="close-menu" class="text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-6">
+                <a href="#home" class="block text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors">Home</a>
+                <a href="#about" class="block text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors">About</a>
+                <a href="#projects" class="block text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors">Projects</a>
+                <a href="#skills" class="block text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors">Skills</a>
+                <a href="#contact" class="block text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors">Contact</a>
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            mobileMenuOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            mobileMenuOverlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+        
+        closeMenu.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Scroll animation
+        function checkFade() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementBottom = el.getBoundingClientRect().bottom;
+                const isVisible = (elementTop < window.innerHeight - 50) && (elementBottom > 0);
+                if (isVisible) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkFade);
+        window.addEventListener('load', checkFade);
+        
+        // Project modal functionality (placeholder)
+        function showProject(id) {
+            alert('Project details for ' + id + ' would be shown here in a complete implementation.');
+        }
+    </script>
 </body>
 </html>
